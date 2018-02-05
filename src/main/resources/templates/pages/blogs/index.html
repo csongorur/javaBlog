@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymleof.org">
+<head>
+<title>Java Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/style/main.css" />
+</head>
+<body>
+	<div th:replace="components/header"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="blog-item" th:each="blog : ${blogs}">
+					<h3 th:text="${blog.title}"></h3>
+					<p th:text="${blog.content}"></p>
+					<span class="blog-user" th:text="${blog.user.username}"></span>
+					<span class="blog-date" th:text="${#dates.format(blog.published, 'yyyy.MM.dd HH:mm')}"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+	background: #999;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 15px;
+}
+
+.login-form {
+	margin-top: 50px;
+}
+
+.blog-item {
+	padding: 30px;
+	margin: 30px 0;
+	border: 1px solid #fff;
+}
+
+.blog-user {
+	display: block;
+}
