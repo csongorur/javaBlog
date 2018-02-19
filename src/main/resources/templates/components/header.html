@@ -4,8 +4,11 @@
 			<header>
 				<h1>Java Blog</h1>
 				<nav>
-					<a class="btn btn-primary" href="/login">Login</a> <a
-						class="btn btn-primary" href="/sign-in">Sign in</a>
+					<span sec:authorize="isAuthenticated()" th:text="Hello + ' ' + ${#authentication.getPrincipal().getUser().getUsername()}"></span>
+					<a class="btn btn-primary" sec:authorize="isAnonymous()" href="/login">Login</a> 
+					<a class="btn btn-primary" sec:authorize="isAuthenticated()" href="/logout">Logout</a>
+					<a class="btn btn-primary" sec:authorize="isAuthenticated()" href="/blog/create">New Blog</a>
+					<a class="btn btn-primary" href="/registration/show">Registrations</a>
 				</nav>
 			</header>
 		</div>

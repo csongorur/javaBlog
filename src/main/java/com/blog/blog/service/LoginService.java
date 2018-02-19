@@ -17,12 +17,6 @@ public class LoginService {
 		super();
 		this.userRepository = userRepository;
 	}
-
-
-	public void initUser() {
-		User user = new User("TestUser", "12345");
-		userRepository.save(user);
-	}
 	
 
 	public Boolean login(String username, String password) {

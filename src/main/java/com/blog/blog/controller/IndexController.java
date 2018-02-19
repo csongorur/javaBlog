@@ -21,7 +21,6 @@ public class IndexController {
 	@GetMapping("/")
 	public String index()
 	{
-		loginService.initUser();
 		return "pages/index";
 	}
 }

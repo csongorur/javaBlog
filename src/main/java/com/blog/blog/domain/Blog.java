@@ -14,16 +14,23 @@ public class Blog {
 	@GeneratedValue
 	@Id
 	private Long id;
+	
 	private String title;
 	
 	@Column(columnDefinition = "TEXT")
 	private String content;
+	
 	private Date published;
 	
 	@ManyToOne
 	private User user;
 	
-	private Blog() {}
+	public Blog() {}
+	
+	public Blog (String title, String content) {
+		this.title = title;
+		this.content = content;
+	}
 
 	public Blog(String title, String content, Date published, User user) {
 		this.title = title;

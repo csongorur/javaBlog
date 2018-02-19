@@ -4,11 +4,12 @@
 		<div class="row">
 			<div class="col">
 				<div class="blog-item" th:each="blog : ${blogs}">
-					<h3 th:text="${blog.title}"></h3>
+					<a th:href="@{/blog/{id}(id=${blog.id})}"><h3 th:text="${blog.title}"></h3></a>
 					<p th:text="${blog.content}"></p>
 					<span class="blog-user" th:text="${blog.user.username}"></span> <span
 						class="blog-date"
 						th:text="${#dates.format(blog.published, 'yyyy.MM.dd HH:mm')}"></span>
+					<a class="btn btn-primary" th:href="@{/blog/delete/{id}(id=${blog.id})}">Delete</a>
 				</div>
 			</div>
 		</div>
